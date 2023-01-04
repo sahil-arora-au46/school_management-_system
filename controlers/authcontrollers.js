@@ -46,6 +46,7 @@ const login = async (req, res) => {
 const logout = (req, res) => {
     console.log("me dba")
     res.cookie('jwt', '', { maxAge: 1 })
+    window.location = "http://127.0.0.1:5500/school_management-_system/public/login.html"
     res.send({ status: 'success', msg: 'Logged Out Successfully' })
 };
 module.exports = {
