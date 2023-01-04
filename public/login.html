@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XYZ School</title>
+  </head>
+  <body>
+    <div class="body">
+      <div class="formContainer">
+        <form action="http://localhost:8989/login" method="post">
+          <div class="username">
+            <label for="username">UserName</label>
+            <input
+              type="text"
+              id="username"
+              name="name"
+              placeholder="Username..."
+            />
+          </div>
+          <div class="userpaasword">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password..."
+            />
+          </div>
+          <input type="submit" value="Login" />
+        </form>
+      </div>
+    </div>
+    <script src="./login.js"></script>
+  </body>
+</html>

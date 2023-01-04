@@ -1,0 +1,27 @@
+{
+  "name": "school_management-_system",
+  "version": "0.0.1",
+  "description": "this app is about school management system. By this a school owner can manage school.This also helps teacher to track students performance and  assign homework to students. Teacher can mark attandance and assigntest results and give feed back to students. students can get school related feeds and current homework .students can give feedbacks for teachers. student can pay the fees  also.     ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahil-arora-au46/school_management-_system.git"
+  },
+  "author": "hrithik upadhyay and sahil arora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sahil-arora-au46/school_management-_system/issues"
+  },
+  "homepage": "https://github.com/sahil-arora-au46/school_management-_system#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.2"
+  }
+}
