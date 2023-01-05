@@ -144,3 +144,33 @@
      background: linear-gradient(to right,#32be8f,#38d39f,#32be8f );
      color: #fff;
 }
+
+@media only screen and (max-width: 600px) {
+    .body{
+        position: relative;
+        flex-direction: column-reverse;
+    }
+   
+    .formContainer{
+        padding: 10px;
+        padding-bottom: 50px;
+        z-index: 2;
+    }
+
+    .userpaasword label i{
+        font-size: 25px;
+        color: rgb(61, 61, 61);
+    }
+    .username label i{
+        font-size: 25px;
+        color: rgb(61, 61, 61);
+    }
+    .userpaasword:hover{
+        border-bottom: 3px solid gray;
+     }
+
+     .username:hover{
+        border-bottom: 3px solid gray;
+     }
+
+}
