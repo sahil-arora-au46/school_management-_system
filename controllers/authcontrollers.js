@@ -31,15 +31,15 @@ const login = async (req, res) => {
             res.cookie("jwt", token, { maxAge: 24 * 60 * 60 })
             if (user.role === "admin") {
                 try {
-                    res.sendFile(path.join(__dirname, "public/admin/admin.html"))
+                     return res.redirect('/adminpage')
                 } catch (error) {
                     consolele.log(error)
                 }
             }
             else if (user.role === "teacher") {
-                res.send("hi from teacher")
+                return res.redirect('/dashbord')
             } else if (user.role === "student") {
-                res.send("hi from student")
+                return res.redirect('/dashbord')
             }
         } catch (error) {
             res.status(500).send({ status: "error", error })

@@ -8,14 +8,44 @@ const connectDB = require("./confiDB");
 const cookieParser = require("cookie-parser");
 const port = 8989;
 const app = express();
-app.use(express.static(path.join(__dirname, "public/admin")));
-app.use(express.static("./public/student"));
-app.use(express.static("./public/teacher"));
+app.use(express.static( "public/admin"));
+app.use(express.static( "public/image"));
+// app.use(express.static("./public/student"));
+// app.use(express.static("./public/teacher"));
+app.use(express.static("./public"))
+app.use(express.static("./public/login"))
+app.use(express.static("./public/notification"))
+app.use(express.static("./public/adminpage"))
+app.use(express.static("./public/homework"))
+app.use(express.static("./public/result"))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/", authRouter);
 
+app.get("/loginn",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/public/login/login.html"))
+})
+
+app.get("/dashbord",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/public/dashbord.html"))
+})
+
+app.get('/notification',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public/notification/notification.html'))
+})
+
+app.get('/homework',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public/homework/homework.html'))
+})
+
+app.get('/result',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public/result/result.html'))
+})
+
+app.get('/adminpage',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public/adminpage/admin.html'))
+})
 // app.use("/user", userRouter);
 // app.use("/student", studentRouter);
 // app.use("/teacher", teacherRouter);
