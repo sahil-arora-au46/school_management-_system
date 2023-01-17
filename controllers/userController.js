@@ -16,8 +16,16 @@ const add = async (req, res) => {
 const remove = () => {
 
 };
-const edit = () => {
-
+const edit = async (req,res) => {
+   let id =req.body.userId
+   let roleId = req.body.roleId
+   console.log(typeof roleId,roleId,"        ",id)
+   try{
+    await userModel.findByIdAndUpdate(id,{userId:String(roleId)})
+    res.status(204).send('ho gya kaam')
+   }catch(error){
+    res.status(500).send(error)
+   }
 };
 
 module.exports = {

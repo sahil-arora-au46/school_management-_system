@@ -17,8 +17,8 @@ const userSchema = new Schema({
         enumValues: ["student", "teacher"],
         required: true
     },
-    userID: {
-        type: mongoose.SchemaTypes.ObjectId,
+    userId: {
+        type: String,
         default: null
     }
 }, {

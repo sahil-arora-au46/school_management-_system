@@ -30,6 +30,7 @@ app.use("/", adminDash)
 app.use("/", dashboard)
 app.use("/user", userRouter)
 app.use('/student',studentRouter)
+app.use('/teacher',teacherRouter)
 
 
 

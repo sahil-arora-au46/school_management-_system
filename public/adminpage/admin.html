@@ -9,7 +9,9 @@
   </head>
 
   <body>
+    
     <div class="body">
+      <!-- <div class="popUp">User Added Successfuly</div> -->
       <div class="nav">
         <h1>XYZ school</h1>
       </div>
@@ -61,21 +63,22 @@
           <div class="teacherform">
             <div class="formT">
               <div class="label">
-                <label for="name">Name</label>
-                <label for="class">Class</label>
-                <label for="roll-no">All classes</label>
+                <label for="Tname">Name</label>
+                <label for="subject">Subject</label>
+                <label for="class">All classes</label>
                 <label for="classTeacher">Class Teacher</label>
               </div>
               <div class="input">
-                <input type="text" id="name" />
-                <input type="number" id="class" />
+                <input type="text" id="Tname" name="name"/>
+                <input type="text" id="subject" name="subject" />
                 <input
                   type="text"
-                  id="allClass"
+                  id="class"
                   placeholder="example 1st,2nd,3rd"
+                  name="class"
                 />
 
-                <input type="text" id="classTeacher" />
+                <input type="text" id="classTeacher" name="isClassIncharge"/>
                 <button id="submitTeacher">Submit</button>
 
               </div>

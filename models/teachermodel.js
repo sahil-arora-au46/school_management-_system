@@ -15,8 +15,8 @@ const teacherSchema = new Schema({
         required: true
     }],
     isClassIncharge: {
-        type: Boolean,
-        default: false
+        type: String,
+        // default: false
     }
 });
 const teacherModel = mongoose.model("teachers", teacherSchema)

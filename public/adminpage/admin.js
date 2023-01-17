@@ -6,23 +6,18 @@ const userbtn = document.getElementById('userBtn')
 const formU = document.querySelector('.formU')
 const submitUser = document.getElementById('submitUser')
 let submitStudent = document.getElementById('submitStudent')
-let check = document.querySelector(".student")
-let check1 = document.querySelector(".user")
+let submitTeacher = document.getElementById('submitTeacher')
 
 
-console.log(check,check1)
 
 // ----------------------------Adding user-----------------------------------------------
-
+let tempUserId;
 submitUser.addEventListener('click', async (e) => {
     e.stopPropagation();
    let name = document.getElementById("Uname").value
    let password = document.getElementById("Upassword").value
    let role = document.getElementById("Urole").value
     
-    let data = {
-
-    }
 
     let user = await fetch('http://localhost:8989/user/add',
         {
@@ -39,15 +34,42 @@ submitUser.addEventListener('click', async (e) => {
         })
        let userdata = await user.json()
     console.log(userdata.user)
-    // if(userdata)
+
+    tempUserId=userdata.user._id
+
+    if(userdata.status=="success"){
+        let body = document.querySelector(".body")
+        var popup = document.createElement("div")
+        popup.innerHTML="User Added Successfuly"
+        popup.className ="popUp"
+        body.appendChild(popup)
+        let pp = document.querySelector(".popUp")
+        setTimeout(function(){
+           body.removeChild(pp)
+        },5000)
+    }
+    else{
+        let body = document.querySelector(".body")
+        var popup = document.createElement("div")
+        popup.innerHTML="User not added"
+        popup.className ="popUp"
+        popup.style.color="red"
+        body.appendChild(popup)
+        let pp = document.querySelector(".popUp")
+        setTimeout(function(){
+           body.removeChild(pp)
+        },5000)
+    }
   
+
     if(userdata.user.role=="student"){
         document.querySelector(".student").style.display= "block";
         document.querySelector(".user").style.display= "none";
-        console.log("going in if")
+       
      }
-     else{
-        console.log("not going in if")
+     else if(userdata.user.role=='teacher'){
+        document.querySelector(".teacher").style.display= "block";
+        document.querySelector(".user").style.display= "none";
      }
 
      if(userdata.user.role=="teacher"){
@@ -73,8 +95,6 @@ submitStudent.addEventListener('click',async(e)=>{
     let section = document.getElementById('Ssection').value
     let  rollnumber = document.getElementById('SrollNo').value
 
-    console.log(name,sClass,section,rollnumber)
-    console.log(typeof(sClass))
 
     let student = await fetch('http://localhost:8989/student/add',{
         headers:{
@@ -90,13 +110,113 @@ submitStudent.addEventListener('click',async(e)=>{
         
     })
     let studentData = await student.json()
-    console.log(studentData)
+
+    document.getElementById('Sname').value=""
+    document.getElementById('Sclass').value=""
+    document.getElementById('Ssection').value=""
+    document.getElementById('SrollNo').value=""
+    await fetch('http://localhost:8989/user/edit',{
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        method: "PUT", 
+        body: JSON.stringify({
+           userId:tempUserId,
+           rollId:String(studentData.id)
+        })
+        
+     })
+    document.querySelector(".student").style.display= "none";
+    
+        document.querySelector(".user").style.display= "block";
+
+
+        let body = document.querySelector(".body")
+var popup = document.createElement("div")
+popup.innerHTML="Student Added Successfuly"
+popup.className ="popUp"
+body.appendChild(popup)
+let pp = document.querySelector(".popUp")
+setTimeout(function(){
+   body.removeChild(pp)
+},5000)
 })
+
+
+
+
 
 
 
 // -------------------------------Adding Student----------------------------------------------
 
+
+
+
+
+// -------------------------------------Adding teacher----------------------------------------------------
+
+
+submitTeacher.addEventListener('click',async(e)=>{
+    e.stopPropagation()
+    let name = document.getElementById('Tname').value
+    let subject = document.getElementById('subject').value
+    let allClasses = document.getElementById('class').value
+    let isClassIncharge = document.getElementById('classTeacher').value
+   
+    let teacher = await fetch("http://localhost:8989/teacher/add",{
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        method: "POST", 
+        body: JSON.stringify({
+            name,
+            subject,
+            class:allClasses,
+           isClassIncharge
+        })
+
+    })
+    let teacherData = await teacher.json()
+    console.log(teacherData)
+    document.getElementById('Tname').value=""
+    document.getElementById('subject').value=""
+    document.getElementById('class').value=""
+    document.getElementById('classTeacher').value=""
+     await fetch('http://localhost:8989/user/edit',{
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        method: "PUT", 
+        body: JSON.stringify({
+           userId:tempUserId,
+           rollId:teacherData.id
+        })
+     })
+    let body = document.querySelector(".body")
+    var popup = document.createElement("div")
+    popup.innerHTML="Teacher Added Successfuly"
+    popup.className ="popUp"
+    body.appendChild(popup)
+    let pp = document.querySelector(".popUp")
+    setTimeout(function(){
+       body.removeChild(pp)
+    },5000)
+
+    document.querySelector(".teacher").style.display= "none";
+    document.querySelector(".user").style.display= "block";
+    })
+
+
+
+
+
+
+
+
+
+
+// -------------------------------------Adding teacher----------------------------------------------------
 
 
 
