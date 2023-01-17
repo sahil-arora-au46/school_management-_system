@@ -1,14 +1,14 @@
 const { Router } = require("express");
-const teacherRouter = new Router();
+const studentRouter = new Router();
 const { data, add, edit, remove } = require("../controllers/studentController")
 
 
 // -----------------curd----for----admin---------------
-teacherRouter.get("/data", data)
-teacherRouter.post("/add", add);
-teacherRouter.put("/edit/:studentID", edit);
-teacherRouter.delete("/delete", remove)
+studentRouter.get("/:id", data)
+studentRouter.post("/add", add);
+studentRouter.put("/edit/:studentID", edit);
+studentRouter.delete("/delete", remove)
 
 module.exports = {
-    teacherRouter
+    studentRouter
 }

@@ -2,8 +2,14 @@ const { userModel } = require("../models/usermodel");
 const data = () => {
 
 };
-const add = () => {
-
+const add = async (req, res) => {
+    let userData = req.body
+    try {
+        let user = await userModel.create(userData);
+        res.json(user)
+    } catch (error) {
+        res.send(error)
+    }
 };
 const remove = () => {
 

@@ -1,178 +1,238 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-.body{
-    background: #3c3258;
-    width: 100vw;
-    height: 100vh;
-}
-
-.nav{
-    width: 100%;
-    height: 7%;
-    background: #1f1c3b;
-    display: flex;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.941);
+.body {
+  background: #3c3258;
+  width: 100vw;
+  height: 100vh;
 }
 
-.wrap{
-    display: flex;
-
+.nav {
+  width: 100%;
+  height: 7%;
+  background: #1f1c3b;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.941);
 }
-.student{
-    flex-basis: 35%;
-    display: flex;
+
+.wrap {
+  display: flex;
+  justify-content: center;
+}
+.student {
+  flex-basis: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  display: none;
+}
+
+.student button {
+  width: 70%;
+  max-width: 350px;
+  font-size: 2rem;
+  background: #fa6e6d;
+  color: #fff;
+  border: none;
+  padding: 10px 0px;
+  border-radius: 20px;
+  /* margin: auto; */
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+.student button:hover {
+  opacity: 0.7;
+}
+.studentform {
+  overflow: hidden;
+}
+.teacherform {
+  overflow: hidden;
+  /* width: 368px; */
+}
+.studentform form {
+  display: flex;
+  font-size: 1.25rem;
+  color: lightgray;
+  transform: translateY(-230px);
+  transition: all 0.5s;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  /* width: 33%; */
+  gap: 12px;
+}
+.studentform form input {
+  height: 1.25rem;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid gray;
+  background: none;
+  color: #fff;
+}
+#submit {
+  border: none;
+  border-bottom: 0px;
+  background: #fa6e6d;
+  /* padding: 5px 0px; */
+  font-size: larger;
+  height: 40px;
+  width: 200px;
+  margin-top: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#submit:hover {
+  opacity: 0.7;
+}
+/* -------------------user----------------------------- */
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  width: 374px;
+}
+
+.userForm {
+  overflow: hidden;
+}
+
+.user button {
+  width: 80%;
+  max-width: 350px;
+  font-size: 2rem;
+  background: #fa6e6d;
+  color: #fff;
+  border: none;
+  padding: 10px 0px;
+  border-radius: 20px;
+  /* margin: auto; */
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.user button:hover {
+  opacity: 0.7;
+}
+
+.userForm .formU {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  color: lightgray;
+  transform: translateY(-200px);
+  transition: all 0.5s;
+}
+
+.userForm form input {
+  height: 1.25rem;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid gray;
+  background: none;
+  color: #fff;
+}
+
+/* -------------------user----------------------------- */
+.teacher {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  width: 374px;
+  display: none;
+}
+.teacher button {
+  width: 80%;
+  max-width: 350px;
+  font-size: 2rem;
+  background: #fa6e6d;
+  color: #fff;
+  border: none;
+  padding: 10px 0px;
+  border-radius: 20px;
+  /* margin: auto; */
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.teacher button:hover {
+  opacity: 0.7;
+}
+
+.teacherform form {
+  display: flex;
+  font-size: 1.25rem;
+  color: lightgray;
+  transform: translateY(-200px);
+  transition: all 0.5s;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  /* width: 20%; */
+  gap: 11px;
+}
+.teacherform form input {
+  height: 1.25rem;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid gray;
+  background: none;
+  color: #fff;
+}
+#submit {
+  border: none;
+  border-bottom: 0px;
+  background: #fa6e6d;
+  /* padding: 5px 0px; */
+  font-size: larger;
+  height: 40px;
+  width: 200px;
+  margin-top: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#submit:hover {
+  opacity: 0.7;
+}
+
+#submitUser {
+  border: none;
+  border-bottom: 0px;
+  background: #fa6e6d;
+  /* padding: 5px 0px; */
+  font-size: larger;
+  height: 40px;
+  width: 200px;
+  margin-top: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#submit:hover {
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrap {
     flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-}
-
-
-.student button{
-    width: 70%;
-    max-width: 350px;
-    font-size: 2rem;
-    background: #fa6e6d;
-    color: #fff;
-    border: none;
-    padding: 10px 0px;
-    border-radius: 20px;
-    /* margin: auto; */
-    margin-bottom: 1.5rem;
-    cursor: pointer;
-}
-.student button:hover{
-    opacity: 0.7;
-}
-.studentform{
-    overflow: hidden;
-   
-}
-.teacherform{
-    overflow: hidden;
-    /* width: 368px; */
-    
-   
-}
-.studentform form{
-    display: flex;
-    font-size: 1.25rem;
-    color: lightgray;
-    transform: translateY(-230px);
-    transition: all 0.5s;
-}
-.input{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    
-}
-.label{
-    display: flex;
-    flex-direction: column;
-    /* width: 33%; */
-    gap: 12px;
-    
-}
-.studentform form input{
-    height: 1.25rem;
-    font-size: 1.25rem;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid gray;
-    background: none;
-    color: #fff;
-}
-#submit{
-    border: none;
-    border-bottom: 0px;
-    background: #fa6e6d;
-    /* padding: 5px 0px; */
-    font-size: larger;
-    height: 40px;
-    width: 200px;
-    margin-top: 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-}
-#submit:hover{
-    opacity: 0.7;
-}
-
-.teacher{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-    width: 374px;
-}
-.teacher button{
-    width: 70%;
-    max-width: 350px;
-    font-size: 2rem;
-    background: #fa6e6d;
-    color: #fff;
-    border: none;
-    padding: 10px 0px;
-    border-radius: 20px;
-    /* margin: auto; */
-    margin-bottom: 1.5rem;
-    cursor: pointer;
-}
-
-.teacher button:hover{
-    opacity: 0.7;
-}
-
-.teacherform form{
-    display: flex;
-    font-size: 1.25rem;
-    color: lightgray;
-    transform: translateY(-200px);
-    transition: all 0.5s;
-}
-.input{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    
-}
-.label{
-    display: flex;
-    flex-direction: column;
-    /* width: 20%; */
-    gap: 11px;
-    
-}
-.teacherform form input{
-    height: 1.25rem;
-    font-size: 1.25rem;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid gray;
-    background: none;
-    color: #fff;
-}
-#submit{
-    border: none;
-    border-bottom: 0px;
-    background: #fa6e6d;
-    /* padding: 5px 0px; */
-    font-size: larger;
-    height: 40px;
-    width: 200px;
-    margin-top: 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-}
-#submit:hover{
-    opacity: 0.7;
-}
-
-@media only screen and (max-width: 600px){
-    .wrap{
-        flex-direction: column;
-    }
+  }
 }

@@ -4,13 +4,27 @@ let SECRET_KEY = "test"
 const login = async (req, res) => {
     const token = req.cookies.jwt;
     const { name, password } = req.body;
+
     // console.log(Object.keys(jwt.verify(token, name)).length)
     if (token) {
-        console.log(token)
+        //cokie parser
+        //condition to check role
+        //re direct as per role
 
         const userInfo = jwt.verify(token, SECRET_KEY);
+        console.log(userInfo)
+        try {
+            if (userInfo.role == "admin") {
+                return res.redirect('/adminpage')
 
-        res.send("bhai phir se login karre ga kya")
+            }
+            else return res.redirect("/dashboard");
+
+
+        } catch (error) {
+            res.status(500).send({ status: "error", error })
+        }
+        // res.send("bhai phir se login karre ga kya")
     } else {
 
         try {
@@ -31,7 +45,7 @@ const login = async (req, res) => {
             res.cookie("jwt", token, { maxAge: 24 * 60 * 60 })
             if (user.role === "admin") {
                 try {
-                     return res.redirect('/adminpage')
+                    return res.redirect('/adminpage')
                 } catch (error) {
                     consolele.log(error)
                 }
@@ -50,7 +64,8 @@ const login = async (req, res) => {
 const logout = (req, res) => {
     console.log("me dba")
     res.cookie('jwt', '', { maxAge: 1 })
-    window.location = "http://127.0.0.1:5500/school_management-_system/public/login.html"
+    // window.location.href = "local"
+    // res.redirect('/')
     res.send({ status: 'success', msg: 'Logged Out Successfully' })
 };
 module.exports = {

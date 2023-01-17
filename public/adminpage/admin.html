@@ -1,66 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./admin.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./admin.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="body">
-        <div class="nav">
-            <h1>XYZ school</h1>
+      <div class="nav">
+        <h1>XYZ school</h1>
+      </div>
+      <div class="wrap">
+        <div class="user">
+          <button id="userBtn">Add user</button>
+          <div class="userForm">
+            <form class="formU" action="">
+              <div class="label">
+                <label for="name">Name</label>
+                <label for="password">Password</label>
+                <label for="role">Role</label>
+              </div>
+              <div class="input">
+                <input type="text" id="name" name="name" />
+                <input type="text" id="password" name="password" />
+                <input type="text" id="role" name="role" />
+                <input type="submit" id="submitUser" />
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="wrap">
-            <div class="student">
-                <button id="btnS">Add Student</button>
-                <div class="studentform">
-                    <form class="formS" action="" method="post">
-                        <div class="label">
-                            <label for="name">Name</label>
-                            <label for="class">Class</label>
-                            <label for="section">Section</label>
-                            <label for="roll-no">Roll no</label>
-                        </div>
-                        <div class="input">
-                            <input type="text" id="name" name="name">
-                            <input type="number" id="class" name="class">
-                            <input type="number" id="section" name="section">
-                            <input type="number" class="rollNo">
-                            <input type='submit' id="submit">
-                        </div>
-                    </form>
-                </div>
-            </div>
 
-            <div class="teacher">
-                <button id="btnT">Add Teacher</button>
-                <div class="teacherform">
-                    <form class="formT" action="" method="post">
-                        <div class="label">
-                            <label for="name">Name</label>
-                            <label for="class">Class</label>
-                            <label for="roll-no">All classes</label>
-                            <label for="classTeacher">Class Teacher</label>
-                        </div>
-                        <div class="input">
-                            <input type="text" id="name">
-                            <input type="number" id="class">
-                            <input type="text" id="allClass" placeholder="example 1st,2nd,3rd">
-
-                            <input type="text" id="classTeacher">
-
-                            <input type='submit' id="submit">
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <div class="student">
+          <button id="btnS">Add Student</button>
+          <div class="studentform">
+            <form class="formS" action="" method="post">
+              <div class="label">
+                <label for="name">Name</label>
+                <label for="class">Class</label>
+                <label for="section">Section</label>
+                <label for="roll-no">Roll no</label>
+              </div>
+              <div class="input">
+                <input type="text" id="name" name="name" />
+                <input type="number" id="class" name="class" />
+                <input type="number" id="section" name="section" />
+                <input type="number" class="rollNo" />
+                <input type="submit" id="submitStudent" />
+              </div>
+            </form>
+          </div>
         </div>
+
+        <div class="teacher">
+          <button id="btnT">Add Teacher</button>
+          <div class="teacherform">
+            <form class="formT" action="" method="post">
+              <div class="label">
+                <label for="name">Name</label>
+                <label for="class">Class</label>
+                <label for="roll-no">All classes</label>
+                <label for="classTeacher">Class Teacher</label>
+              </div>
+              <div class="input">
+                <input type="text" id="name" />
+                <input type="number" id="class" />
+                <input
+                  type="text"
+                  id="allClass"
+                  placeholder="example 1st,2nd,3rd"
+                />
+
+                <input type="text" id="classTeacher" />
+
+                <input type="submit" id="submitTeacher" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="./admin.js"></script>
-</body>
-
+  </body>
 </html>
