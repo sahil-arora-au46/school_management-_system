@@ -4,15 +4,15 @@ let { checkSpace } = require("../validators/stuValidators")
 const studentSchema = new Schema({
     name: {
         type: String,
-        validate: {
-            validator: checkSpace,
-            message: 'You must start with letter.'
-        },
+        // validate: {
+        //     validator: checkSpace,
+        //     message: 'You must start with letter.'
+        // },
         required: true
     },
     class: {
         type: String,
-        enumValues: ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th"],
+        // enumValues: ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th"],
         required: true
 
     },

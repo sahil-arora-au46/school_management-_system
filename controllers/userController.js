@@ -6,10 +6,12 @@ const add = async (req, res) => {
     let userData = req.body
     try {
         let user = await userModel.create(userData);
-        res.json(user)
+        res.send({status:'success', user:user})
+     
     } catch (error) {
         res.send(error)
     }
+  
 };
 const remove = () => {
 

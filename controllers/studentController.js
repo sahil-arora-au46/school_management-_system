@@ -7,7 +7,7 @@ const data = async (req, res) => {
         res.status(500).send({ status: "error", error })
     }
 };
-const add = async () => {
+const add = async (req,res) => {
     let studentData = req.body
     try {
         let student = await studentModel.create(studentData)

@@ -27,7 +27,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
-  display: none;
+  display: block;
 }
 
 .student button {
@@ -53,7 +53,7 @@
   overflow: hidden;
   /* width: 368px; */
 }
-.studentform form {
+.studentform .formS {
   display: flex;
   font-size: 1.25rem;
   color: lightgray;
@@ -71,7 +71,7 @@
   /* width: 33%; */
   gap: 12px;
 }
-.studentform form input {
+.studentform .formS input {
   height: 1.25rem;
   font-size: 1.25rem;
   border: none;
@@ -102,6 +102,7 @@
   align-items: center;
   margin-top: 2rem;
   width: 374px;
+  display: block;
 }
 
 .userForm {
@@ -135,7 +136,7 @@
   transition: all 0.5s;
 }
 
-.userForm form input {
+.userForm .formU input {
   height: 1.25rem;
   font-size: 1.25rem;
   border: none;
@@ -172,7 +173,7 @@
   opacity: 0.7;
 }
 
-.teacherform form {
+.teacherform .formT {
   display: flex;
   font-size: 1.25rem;
   color: lightgray;
@@ -190,7 +191,7 @@
   /* width: 20%; */
   gap: 11px;
 }
-.teacherform form input {
+.teacherform .formT input {
   height: 1.25rem;
   font-size: 1.25rem;
   border: none;
