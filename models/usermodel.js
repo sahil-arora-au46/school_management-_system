@@ -14,12 +14,14 @@ const userSchema = new Schema({
     },
     role: {
         type: String,
-        enumValues: ["student", "teacher"],
+        enumValues: ["students", "teachers"],
         required: true
     },
     userId: {
-        type: String,
-        default: null
+        type: mongoose.Schema.Types.ObjectId,
+        refPath: `role`,
+        default: mongoose.Types.ObjectId()
+
     }
 }, {
     versionKey: false
