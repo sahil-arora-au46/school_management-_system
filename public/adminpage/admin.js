@@ -7,6 +7,10 @@ const formU = document.querySelector('.formU')
 const submitUser = document.getElementById('submitUser')
 let submitStudent = document.getElementById('submitStudent')
 let submitTeacher = document.getElementById('submitTeacher')
+const notificationBtn = document.querySelector('.notificationBtn')
+const ntf = document.querySelector('.ntf')
+const addBtn = document.querySelector('.addBtn')
+const logoutbtn = document.querySelector("#logout")
 
 
 
@@ -19,7 +23,7 @@ submitUser.addEventListener('click', async (e) => {
     let role = document.getElementById("Urole").value
 
 
-    let user = await fetch('http://localhost:8989/user/add',
+    let user = await fetch('/user/add',
         {
             headers: {
                 // 'Accept': 'application/json',
@@ -62,12 +66,12 @@ submitUser.addEventListener('click', async (e) => {
     }
 
 
-    if (userdata.user.role == "students") {
+    if (userdata.user.role == "student") {
         document.querySelector(".student").style.display = "block";
         document.querySelector(".user").style.display = "none";
 
     }
-    else if (userdata.user.role == 'teachers') {
+    else if (userdata.user.role == 'teacher') {
         document.querySelector(".teacher").style.display = "block";
         document.querySelector(".user").style.display = "none";
     }
@@ -96,7 +100,7 @@ submitStudent.addEventListener('click', async (e) => {
     let rollnumber = document.getElementById('SrollNo').value
 
 
-    let student = await fetch('http://localhost:8989/student/add', {
+    let student = await fetch('/student/add', {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -115,7 +119,7 @@ submitStudent.addEventListener('click', async (e) => {
     document.getElementById('Sclass').value = ""
     document.getElementById('Ssection').value = ""
     document.getElementById('SrollNo').value = ""
-    await fetch('http://localhost:8989/user/edit', {
+    await fetch('/user/edit', {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -126,7 +130,6 @@ submitStudent.addEventListener('click', async (e) => {
         })
 
     })
-    console.log(studentData.id, tempUserId)
     document.querySelector(".student").style.display = "none";
 
     document.querySelector(".user").style.display = "block";
@@ -165,7 +168,7 @@ submitTeacher.addEventListener('click', async (e) => {
     let allClasses = document.getElementById('class').value
     let isClassIncharge = document.getElementById('classTeacher').value
 
-    let teacher = await fetch("http://localhost:8989/teacher/add", {
+    let teacher = await fetch("/teacher/add", {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -184,14 +187,14 @@ submitTeacher.addEventListener('click', async (e) => {
     document.getElementById('subject').value = ""
     document.getElementById('class').value = ""
     document.getElementById('classTeacher').value = ""
-    await fetch('http://localhost:8989/user/edit', {
+    await fetch('/user/edit', {
         headers: {
             'Content-Type': 'application/json'
         },
         method: "PUT",
         body: JSON.stringify({
             userId: tempUserId,
-            rollId: teacherData
+            rollId: teacherData.id
         })
     })
     let body = document.querySelector(".body")
@@ -219,6 +222,57 @@ submitTeacher.addEventListener('click', async (e) => {
 
 // -------------------------------------Adding teacher----------------------------------------------------
 
+
+
+// ------------------------------------------Add Notificartion--------------------------------------------------
+notificationBtn.addEventListener('click', function () {
+    if (!this.dataset.clicked) {
+        this.setAttribute('data-clicked', 'true')
+
+        ntf.style.display = "block";
+
+    }
+    else {
+        this.removeAttribute('data-clicked')
+
+        ntf.style.display = "none";
+
+    }
+})
+
+
+addBtn.addEventListener('click', async function () {
+    let data = document.getElementById('notificationInput').value
+    if (data == "") {
+        alert('Add notifiction first')
+    }
+    else {
+        let notification = await fetch('/notification/add', {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify({
+                data,
+                date: new Date().toDateString(),
+                user: 'Sahil'
+            })
+
+        })
+
+        alert('notification added')
+        document.getElementById('notificationInput').value = ""
+    }
+
+})
+
+
+
+
+
+
+
+// ------------------------------------------Add Notificartion--------------------------------------------------
 
 
 // ----------------------toggle------------------------
@@ -276,3 +330,7 @@ userbtn.addEventListener('click', function () {
 })
 
 // ----------------------toggle------------------------
+// -----------------logout-------------
+logoutbtn.addEventListener("click", () => {
+    window.location.href = "/logout";
+})

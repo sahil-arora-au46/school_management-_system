@@ -8,8 +8,43 @@
   height: 100vh;
   position: relative;
 }
+.notificationBtn {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  background: #d58757;
+  border: none;
+  color: #1f1c3b;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  z-index: 2;
+  margin-bottom: 1rem;
+}
+.notificationBtn:hover {
+  opacity: 0.7;
+}
+.addBtn,
+#logout {
+  padding: 10px 20px;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  background: #d58757;
+  border: none;
+  color: #1f1c3b;
+  cursor: pointer;
+}
 
-.popUp{
+#notificationInput {
+  border: none;
+  background: #1f1c3b;
+  color: #fff;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 1.25rem;
+  width: 80%;
+}
+
+.popUp {
   position: absolute;
   z-index: 2;
   color: #fff;
@@ -27,6 +62,7 @@
   background: #1f1c3b;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   color: rgba(255, 255, 255, 0.941);
 }
 
@@ -166,7 +202,7 @@
   align-items: center;
   margin-top: 2rem;
   width: 374px;
-  display:none;
+  display: none;
 }
 .teacher button {
   width: 80%;
@@ -228,7 +264,9 @@
 #submit:hover {
   opacity: 0.7;
 }
-
+#logout {
+  margin-right: 20px !important;
+}
 #submitUser {
   border: none;
   border-bottom: 0px;

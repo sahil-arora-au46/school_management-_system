@@ -1,176 +1,167 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.body{
-    display: flex;
-  
-    width: 100vw;
-    height: 100vh;
-}
-.imageSection{
-    flex-basis: 50%;
-    position: relative;
-  
+.body {
+  display: flex;
 
+  width: 100vw;
+  height: 100vh;
 }
-.background{
-    z-index: 1px;
-    position: absolute;
-    right: 18%;
-    bottom: -3%;
-    width: 1404px;
-    height: 1404px;
-    background: linear-gradient(to bottom , #38d39f, #32be8f);
-    border-radius: 50%;
+.imageSection {
+  flex-basis: 50%;
+  position: relative;
 }
-.imageSection img{
-    position: relative;
-    width: 90%;
-    z-index: 2;
-    right: -10%;
+.background {
+  z-index: 1px;
+  position: absolute;
+  right: 18%;
+  bottom: -3%;
+  width: 1404px;
+  height: 1404px;
+  background: linear-gradient(to bottom, #38d39f, #32be8f);
+  border-radius: 50%;
 }
-
+.imageSection img {
+  position: relative;
+  width: 90%;
+  z-index: 2;
+  right: -10%;
+}
 
 /* -------------------Form area--------------------------- */
 
 /* ------------------------user-------------------------------- */
 
-.formContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-basis: 50%;
-    gap: 50px;
-    padding-top: 5%;
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 50%;
+  gap: 50px;
+  padding-top: 5%;
 }
 
-.schoolLogo{
-    width: 200px;
-    height: 200px;
+.schoolLogo {
+  width: 200px;
+  height: 200px;
 }
 .schoolLogo img {
-    width: 100%;
+  width: 100%;
 }
 
-.username{
-  
-    height: 24%;
-    width: 90%;
-    border-bottom: 3px solid gray;
-    margin-bottom: 10%;
-   transition: 0.2s;
-
+.username {
+  height: 24%;
+  width: 90%;
+  border-bottom: 3px solid gray;
+  margin-bottom: 10%;
+  transition: 0.2s;
 }
-.username:hover{
-    border-bottom: 3px solid #32be8f;
+.username:hover {
+  border-bottom: 3px solid #32be8f;
 }
-.username input{
-    width: 80%;
-    height: 100%;
-    font-size: 30px;
-    text-align: start;
-    border: none;
-    padding: 0;
-    transform: translateY(-2px);
-    background: none;
-    outline: none;
-    vertical-align: top;
+.username input {
+  width: 80%;
+  height: 100%;
+  font-size: 30px;
+  text-align: start;
+  border: none;
+  padding: 0;
+  transform: translateY(-2px);
+  background: none;
+  outline: none;
+  vertical-align: top;
 }
 
 .username label {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .username label i {
-    font-size: 30px;
-    color: #32be8f
+  font-size: 30px;
+  color: #32be8f;
 }
 
 /* ------------------------user-------------------------------- */
 
-
-.userpaasword{
-    height: 24%;
-    width: 90%;
-    border-bottom: 3px solid gray;
-    margin-bottom: 10%;
-   transition: 0.2s;
-    
+.userpaasword {
+  height: 24%;
+  width: 90%;
+  border-bottom: 3px solid gray;
+  margin-bottom: 10%;
+  transition: 0.2s;
 }
-.userpaasword:hover{
-   border-bottom: 3px solid #32be8f;
+.userpaasword:hover {
+  border-bottom: 3px solid #32be8f;
 }
 
-.userpaasword input{
-    width: 80%;
-    height: 100%;
-    font-size: 30px;
-    text-align: start;
-    border: none;
-    padding: 0;
-    transform: translateY(-2px);
-    background: none;
-    outline: none;
-    vertical-align: top;
+.userpaasword input {
+  width: 80%;
+  height: 100%;
+  font-size: 30px;
+  text-align: start;
+  border: none;
+  padding: 0;
+  transform: translateY(-2px);
+  background: none;
+  outline: none;
+  vertical-align: top;
 }
 
 .userpaasword label {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .userpaasword label i {
-    font-size: 30px;
-    color: #32be8f
+  font-size: 30px;
+  color: #32be8f;
 }
 
-.formContainer input[type = submit]{
-    width: 90%;
-    height: 35px;
-    border-radius: 20px;
-    border: 3px solid #32be8f;
-    background: #fff;
-   
-   font-size: 25px;
-   color: #32be8f;
-   transition: all 0.8s;
+.formContainer input[type="submit"] {
+  width: 90%;
+  height: 35px;
+  border-radius: 20px;
+  border: 3px solid #32be8f;
+  background: #fff;
+
+  font-size: 25px;
+  color: #32be8f;
+  transition: all 0.8s;
 }
 
-.formContainer input[type = submit]:hover{
-    cursor: pointer;
-     background: linear-gradient(to right,#32be8f,#38d39f,#32be8f );
-     color: #fff;
+.formContainer input[type="submit"]:hover {
+  cursor: pointer;
+  background: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+  color: #fff;
 }
 
 @media only screen and (max-width: 600px) {
-    .body{
-        position: relative;
-        flex-direction: column-reverse;
-    }
-   
-    .formContainer{
-        padding: 10px;
-        padding-bottom: 50px;
-        z-index: 2;
-    }
+  .body {
+    position: relative;
+    flex-direction: column-reverse;
+  }
 
-    .userpaasword label i{
-        font-size: 25px;
-        color: rgb(61, 61, 61);
-    }
-    .username label i{
-        font-size: 25px;
-        color: rgb(61, 61, 61);
-    }
-    .userpaasword:hover{
-        border-bottom: 3px solid gray;
-     }
+  .formContainer {
+    padding: 10px;
+    padding-bottom: 50px;
+    z-index: 2;
+  }
 
-     .username:hover{
-        border-bottom: 3px solid gray;
-     }
+  .userpaasword label i {
+    font-size: 25px;
+    color: rgb(61, 61, 61);
+  }
+  .username label i {
+    font-size: 25px;
+    color: rgb(61, 61, 61);
+  }
+  .userpaasword:hover {
+    border-bottom: 3px solid gray;
+  }
 
+  .username:hover {
+    border-bottom: 3px solid gray;
+  }
 }

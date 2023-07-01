@@ -23,7 +23,7 @@ const classesSchema = new Schema({
         required: true
     }]
 })
-const classesModel = new mongoose.model("classes", classesSchema);
+const classesModel = new mongoose.model("classes", classesSchema)
 module.exports = {
     classesModel
 }

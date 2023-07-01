@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const dbUrl = "mongodb+srv://sahil:12345@sahil.suz4afh.mongodb.net/?retryWrites=true&w=majority"
+const dbUrl = "mongodb+srv://sahil:Bimla8950@sahil.suz4afh.mongodb.net/?retryWrites=true&w=majority"
 let connectDB = async () => {
     try {
         await mongoose.connect(dbUrl, { dbName: "SMS" })

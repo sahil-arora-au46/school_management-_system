@@ -1,13 +1,15 @@
 const { studentModel } = require("../models/studentmodel");
 const data = async (req, res) => {
     try {
-        let students = await studentModel.find();
+        const userId = req.param
+        console.log("uuuuu", userId)
+        let students = await studentModel.findOne();
         res.status(200).json(students);
     } catch (error) {
         res.status(500).send({ status: "error", error })
     }
 };
-const add = async (req,res) => {
+const add = async (req, res) => {
     let studentData = req.body
     try {
         let student = await studentModel.create(studentData)
