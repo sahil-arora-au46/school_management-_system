@@ -14,20 +14,20 @@ const logout = document.querySelector('#logout')
 
 
 dashbord.addEventListener('click', () => {
-    window.location.href = "http://localhost:8989/dashbord"
+    window.location.href = "/dashbord"
 })
 
 notification.addEventListener('click', () => {
     console.log('clicked')
-    window.location.href = "http://localhost:8989/notification"
+    window.location.href = "/notification"
 })
 
 homework.addEventListener('click', () => {
-    window.location.href = "http://localhost:8989/homework"
+    window.location.href = "/homework"
 })
 
 result.addEventListener('click', () => {
-    window.location.href = "http://localhost:8989/result"
+    window.location.href = "/result"
 })
 
 
@@ -52,9 +52,9 @@ profilebtn.addEventListener('click', function () {
 logout.addEventListener("click", async () => {
     try {
 
-        await fetch("http://localhost:8989/logout", { mode: "no-cors", method: "POST" })
+        await fetch("/logout", { mode: "no-cors", method: "POST" })
         // alert("log out")
-        window.location = "http://localhost:8989/"
+        window.location = "/"
 
     } catch (error) {
         console.log(error)
