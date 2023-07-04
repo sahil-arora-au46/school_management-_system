@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const ejs = require('ejs')
@@ -12,7 +13,7 @@ const notifiROuter = require('./routes/notification/notificationRoutes')
 const connectDB = require("./confiDB");
 const cookieParser = require("cookie-parser");
 const bodyParser = require('body-parser');
-const port = 2222;
+const port = process.env.PORT || 2222;
 const app = express();
 app.set('view engine', 'ejs')
 // Parse JSON bodies
